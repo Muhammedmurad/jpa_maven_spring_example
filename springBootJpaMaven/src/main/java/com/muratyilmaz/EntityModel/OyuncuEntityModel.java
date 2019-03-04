@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PERFORMERS")
-public class OyuncularEntityModel extends BaseEntity {
+public class OyuncuEntityModel extends BaseEntity {
 
 	/**
 	 * 

@@ -11,10 +11,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- * Bu classı diğer entitylerime extend ederek kullanacağım. Diğer entitylerimde
- * ortak olan alanlarımı tekrar tanımlamak zorunda kalmayacağım
- */
+
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
@@ -35,5 +32,42 @@ public abstract class BaseEntity implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "UPDATE_DATE")
     protected Date updateDate;
+    
+    @Column(name = "SOFT_DELETE")
+    protected boolean softDelete = false;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public boolean isSoftDelete() {
+		return softDelete;
+	}
+
+	public void setSoftDelete(boolean softDelete) {
+		this.softDelete = softDelete;
+	}
+    
+    
 
 }
